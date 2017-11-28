@@ -29,7 +29,7 @@ class LaravelTwStreetnameServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['TwStreet'] = $this->app->share(function ($app) {
+        $this->app->signleton('TwStreet', function ($app) {
             return new LaravelTwStreetname;
         });
 
